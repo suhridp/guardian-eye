@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'dart:developer' as devtools show log;
 
 class WalkWithMePage extends StatefulWidget {
+  const WalkWithMePage({super.key});
+
   @override
-  _WalkWithMePageState createState() => _WalkWithMePageState();
+  State<WalkWithMePage> createState() => _WalkWithMePageState();
 }
 
 class _WalkWithMePageState extends State<WalkWithMePage> {
@@ -27,11 +30,11 @@ class _WalkWithMePageState extends State<WalkWithMePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Set Security Pin'),
+          title: const Text('Set Security Pin'),
           content: TextField(
             controller: _pinController,
             obscureText: true,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: 'Enter a unique security pin',
             ),
           ),
@@ -46,7 +49,7 @@ class _WalkWithMePageState extends State<WalkWithMePage> {
                   _startSecurityCheck(); // Start the security pin check
                 }
               },
-              child: Text('Start'),
+              child: const Text('Start'),
             ),
           ],
         );
@@ -55,7 +58,7 @@ class _WalkWithMePageState extends State<WalkWithMePage> {
   }
 
   void _startSecurityCheck() {
-    _securityTimer = Timer.periodic(Duration(minutes: 3), (timer) {
+    _securityTimer = Timer.periodic(const Duration(minutes: 3), (timer) {
       _promptSecurityPin(); // Prompt for security pin every 3 minutes
     });
   }
@@ -66,10 +69,10 @@ class _WalkWithMePageState extends State<WalkWithMePage> {
       barrierDismissible: false, // Prevent dismissing the dialog without input
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Security Check'),
+          title: const Text('Security Check'),
           content: TextField(
             obscureText: true,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: 'Enter your security pin',
             ),
             onChanged: (value) {
@@ -88,7 +91,7 @@ class _WalkWithMePageState extends State<WalkWithMePage> {
                       .pop(); // Close the dialog if pin matches
                 }
               },
-              child: Text('Submit'),
+              child: const Text('Submit'),
             ),
           ],
         );
@@ -98,7 +101,7 @@ class _WalkWithMePageState extends State<WalkWithMePage> {
 
   void _triggerDangerAlert() {
     // Logic to handle the danger alert (e.g., send notifications, alert emergency contacts)
-    print('User in danger! Sending alert...');
+    devtools.log('User in danger! Sending alert...');
     // Here you would implement actual alert logic, like sending an SOS message
   }
 
@@ -106,40 +109,40 @@ class _WalkWithMePageState extends State<WalkWithMePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Walk with Me'),
+        title: const Text('Walk with Me'),
         backgroundColor: Colors.purple,
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             TextField(
               controller: _fromController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'From',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextField(
               controller: _toController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'To',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _startWalk,
-              child: Text('Start Walk'),
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 15),
-                textStyle: TextStyle(fontSize: 16),
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                textStyle: const TextStyle(fontSize: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
               ),
+              child: const Text('Start Walk'),
             ),
           ],
         ),

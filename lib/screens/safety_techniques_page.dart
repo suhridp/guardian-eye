@@ -44,36 +44,38 @@ class SafetyTechniquesPage extends StatelessWidget {
     },
   ];
 
+   SafetyTechniquesPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Safety Techniques'),
+        title:const Text('Safety Techniques'),
         backgroundColor: Colors.purple,
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding:const EdgeInsets.all(16.0),
         child: ListView.builder(
           itemCount: safetyTips.length,
           itemBuilder: (context, index) {
             return Card(
-              margin: EdgeInsets.only(bottom: 16.0),
+              margin:const EdgeInsets.only(bottom: 16.0),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
               elevation: 5,
               child: ListTile(
-                contentPadding: EdgeInsets.all(16.0),
+                contentPadding:const EdgeInsets.all(16.0),
                 title: Text(
                   safetyTips[index]['title']!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 subtitle: Text(
                   safetyTips[index]['description']!,
-                  style: TextStyle(fontSize: 16.0),
+                  style:const TextStyle(fontSize: 16.0),
                 ),
               ),
             );

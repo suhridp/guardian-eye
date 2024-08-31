@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen>
@@ -18,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen>
     // Initialize the animation controller
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 3), // duration of the animation
+      duration:const Duration(seconds: 3), // duration of the animation
     );
 
     // Define the animation
@@ -31,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen>
     _animationController.forward();
 
     // Navigate to the next screen after a delay
-    Timer(Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacementNamed(context, '/login');
     });
   }
@@ -46,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
@@ -64,8 +66,8 @@ class _SplashScreenState extends State<SplashScreen>
                   width: 100,
                   height: 100,
                 ),
-                SizedBox(height: 20),
-                Text(
+                const SizedBox(height: 20),
+                const Text(
                   'GuardianEye',
                   style: TextStyle(
                     fontSize: 24,

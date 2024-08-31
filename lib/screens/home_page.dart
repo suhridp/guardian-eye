@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'dart:developer' as devtools show log;
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   // This function sends an SOS alert. Since we cannot using location package,
   // it will simply notify the user or send an alert with including location.
   Future<void> sendSOS() async {
     // Here, you would integrate your backend service to handle the SOS alert
     // and send notifications to emergency contacts and the local authorities.
 
-    print('SOS Alert Sent!'); // Placeholder for actual SOS logic
+    devtools.log('SOS Alert Sent!'); // Placeholder for actual SOS logic
     // Implement the actual signal sending logic here
   }
 
@@ -15,111 +18,111 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('GuardianEye'),
+        title: const Text('GuardianEye'),
         backgroundColor: Colors.purple,
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/emergency-numbers');
               },
-              child: Text('Emergency Numbers'),
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 15),
-                textStyle: TextStyle(fontSize: 16),
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                textStyle: const TextStyle(fontSize: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
               ),
+              child: const Text('Emergency Numbers'),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/edit-profile');
               },
-              child: Text('Edit Profile'),
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 15),
-                textStyle: TextStyle(fontSize: 16),
+                padding:const EdgeInsets.symmetric(vertical: 15),
+                textStyle:const TextStyle(fontSize: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
               ),
+              child:const Text('Edit Profile'),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/walk-with-me');
               },
-              child: Text('Walk with me'),
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 15),
-                textStyle: TextStyle(fontSize: 16),
+                padding:const EdgeInsets.symmetric(vertical: 15),
+                textStyle:const TextStyle(fontSize: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
               ),
+              child: const Text('Walk with me'),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/check-safety');
               },
-              child: Text('Check Safety'),
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 15),
-                textStyle: TextStyle(fontSize: 16),
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                textStyle:const TextStyle(fontSize: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
               ),
+              child:const Text('Check Safety'),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/safety-techniques');
               },
-              child: Text('Safety Techniques'),
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 15),
-                textStyle: TextStyle(fontSize: 16),
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                textStyle: const TextStyle(fontSize: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
               ),
+              child:const Text('Safety Techniques'),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/blog');
               },
-              child: Text('Community Blog'),
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 15),
-                textStyle: TextStyle(fontSize: 16),
+                padding:const EdgeInsets.symmetric(vertical: 15),
+                textStyle:const TextStyle(fontSize: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
               ),
+              child: const Text('Community Blog'),
             ),
-            Spacer(), // Spacer to push the SOS button to the bottom
+            const Spacer(), // Spacer to push the SOS button to the bottom
             ElevatedButton(
               onPressed: sendSOS,
-              child: Text('SOS'),
               style: ElevatedButton.styleFrom(
                 //primary: Colors.red, // Red color to indicate urgency
-                padding: EdgeInsets.symmetric(vertical: 20),
-                textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                padding:const EdgeInsets.symmetric(vertical: 20),
+                textStyle:const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
               ),
+              child: const Text('SOS'),
             ),
           ],
         ),

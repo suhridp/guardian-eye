@@ -2,22 +2,24 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 class LoadingPage extends StatefulWidget {
+  const LoadingPage({super.key});
+
   @override
-  _LoadingPageState createState() => _LoadingPageState();
+  State<LoadingPage> createState() => _LoadingPageState();
 }
 
 class _LoadingPageState extends State<LoadingPage> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacementNamed(context, '/login');
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: CircularProgressIndicator(),
       ),

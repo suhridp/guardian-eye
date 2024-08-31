@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'screens/loading_page.dart';
 import 'screens/home_page.dart';
 import 'screens/login_page.dart';
 import 'screens/emergency_numbers_page.dart'; // Import the emergency numbers page
@@ -21,6 +20,8 @@ void main() {
 class GuardianEyeApp extends StatelessWidget {
   final BlogService blogService = BlogService();
 
+  GuardianEyeApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,21 +29,24 @@ class GuardianEyeApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
+      debugShowCheckedModeBanner: false,
       initialRoute: '/splash', // Set the splash screen as the initial route
       routes: {
-        '/splash': (context) => SplashScreen(), // Splash screen route
-        '/': (context) => SplashScreen(),
-        '/home': (context) => HomePage(),
-        '/login': (context) => LoginPage(),
-        '/register': (context) => RegisterPage(),
+        '/splash': (context) => const SplashScreen(), // Splash screen route
+        '/': (context) => const SplashScreen(),
+        '/home': (context) => const HomePage(),
+        '/login': (context) => const LoginPage(),
+        '/register': (context) => const RegisterPage(),
         '/blog': (context) => BlogPage(),
-        '/edit-profile': (context) => EditProfilePage(),
+        '/edit-profile': (context) => const EditProfilePage(),
         '/new-blog-post': (context) =>
             NewBlogPostPage(blogService: blogService),
         '/emergency-numbers': (context) =>
-            EmergencyNumbersPage(), // Emergency Numbers route
-        '/walk-with-me': (context) => WalkWithMePage(), // Walk with Me route
-        '/check-safety': (context) => CheckSafetyPage(), // Check Safety route
+            const EmergencyNumbersPage(), // Emergency Numbers route
+        '/walk-with-me': (context) =>
+            const WalkWithMePage(), // Walk with Me route
+        '/check-safety': (context) =>
+            const CheckSafetyPage(), // Check Safety route
         '/safety-techniques': (context) =>
             SafetyTechniquesPage(), // Safety Techniques route
       },

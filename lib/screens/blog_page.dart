@@ -6,13 +6,15 @@ import '../widgets/blog_post_card.dart';
 class BlogPage extends StatelessWidget {
   final BlogService blogService = BlogService();
 
+  BlogPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     List<BlogPost> posts = blogService.getAllPosts();
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Community Blog'),
+        title: const Text('Community Blog'),
         backgroundColor: Colors.purple,
       ),
       body: ListView.builder(
@@ -25,8 +27,8 @@ class BlogPage extends StatelessWidget {
         onPressed: () {
           Navigator.pushNamed(context, '/new-blog-post');
         },
-        child: Icon(Icons.add),
         backgroundColor: Colors.purple,
+        child: const Icon(Icons.add),
       ),
     );
   }

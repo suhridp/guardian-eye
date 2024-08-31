@@ -4,7 +4,7 @@ import '../models/blog_post.dart';
 class BlogPostCard extends StatelessWidget {
   final BlogPost post;
 
-  BlogPostCard({required this.post});
+  const BlogPostCard({super.key, required this.post});
 
   @override
   Widget build(BuildContext context) {

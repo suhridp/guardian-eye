@@ -1,4 +1,7 @@
-# guardianeye
+#run
+ export PATH="$PATH:`pwd`/flutter/bin"
+
+# guardian-eye
 
 A new Flutter project.
 

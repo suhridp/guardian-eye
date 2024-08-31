@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CheckSafetyPage extends StatelessWidget {
+  const CheckSafetyPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     // This would ideally show the result of the safety check
@@ -9,11 +11,11 @@ class CheckSafetyPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Check Safety'),
+        title: const Text('Check Safety'),
         backgroundColor: Colors.purple,
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -28,19 +30,19 @@ class CheckSafetyPage extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Logic to suggest a safer route or recheck
               },
-              child: Text('Suggest Safer Route'),
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 15),
-                textStyle: TextStyle(fontSize: 16),
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                textStyle: const TextStyle(fontSize: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
               ),
+              child: const Text('Suggest Safer Route'),
             ),
           ],
         ),
