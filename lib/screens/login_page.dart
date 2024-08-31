@@ -19,7 +19,7 @@ class LoginPage extends StatelessWidget {
               ),
               const SizedBox(width: 10),
               const Text(
-                'GuardianEye',
+                'GuardianEye......',
                 style: TextStyle(
                   fontSize: 32.0,
                   fontWeight: FontWeight.bold,
